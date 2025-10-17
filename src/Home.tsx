@@ -16,28 +16,24 @@ const Home = () => {
     const hours = date.getHours();
 
     if (hours >= 5 && hours < 12) {
-      // Morning (5:00 AM - 11:59 AM)
       setBgThemes({
-        from: "#FF9A8B", // Soft coral
-        to: "#FF6A88", // Pink
+        from: "#FF9A8B",
+        to: "#FF6A88",
       });
       setWelcomeMessage("Sabahınız Xeyir");
     } else if (hours >= 12 && hours < 17) {
-      // Afternoon (12:00 PM - 4:59 PM)
       setBgThemes({
-        from: "#36D1DC", // Bright cyan
-        to: "#5B86E5", // Blue
+        from: "#36D1DC",
+        to: "#5B86E5",
       });
       setWelcomeMessage("Günortanız Xeyir");
     } else if (hours >= 17 && hours < 21) {
-      // Evening (5:00 PM - 8:59 PM)
       setBgThemes({
         from: "#FF6B6B", // Coral red
         to: "#FFE66D", // Soft yellow
       });
       setWelcomeMessage("Axşamınız Xeyir");
     } else {
-      // Night (9:00 PM - 4:59 AM)
       setBgThemes({
         from: "#0F2027", // Dark blue
         to: "#203A43", // Medium blue
@@ -48,7 +44,7 @@ const Home = () => {
 
   React.useEffect(() => {
     timeBgChanger();
-    // Update every minute to catch time changes
+
     const interval = setInterval(timeBgChanger, 60000);
     return () => clearInterval(interval);
   }, []);

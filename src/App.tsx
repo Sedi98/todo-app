@@ -29,7 +29,7 @@ export default function App() {
 
   if (!session) {
     return <div className="max-w-4xl mx-auto h-screen p-2">
-      <Auth supabaseClient={supabase} appearance={{ theme: ThemeSupa }} />
+      <Auth supabaseClient={supabase} providers={[]} appearance={{ theme: ThemeSupa }} />
     </div> ;
   } else {
     return <Home />;
