@@ -28,9 +28,26 @@ export default function App() {
   }, []);
 
   if (!session) {
-    return <div className="max-w-4xl mx-auto h-screen p-2">
-      <Auth supabaseClient={supabase} providers={[]} appearance={{ theme: ThemeSupa }} />
-    </div> ;
+    return (
+      <div className="max-w-4xl mx-auto h-screen p-2">
+        <Auth
+          supabaseClient={supabase}
+          providers={[]}
+          appearance={{ theme: ThemeSupa }}
+          localization={{
+            variables: {
+              sign_in: {
+                email_label: "E-poçt ",
+                password_label: "Şifrə",
+                email_input_placeholder: "E-poçt adresinizi daxil edin",
+                password_input_placeholder: "Şifrənizi daxil edin",
+                button_label: "Daxil ol",
+              },
+            },
+          }}
+        />
+      </div>
+    );
   } else {
     return <Home />;
   }

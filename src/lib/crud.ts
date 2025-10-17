@@ -29,7 +29,7 @@ export const getAllNotesByUser = async (
     .from("notes")
     .select("*")
     .eq("user_id", user?.id)
-    .eq("is_visible", true);
+    .eq("is_visible", true).order("created_at", { ascending: true });
 
   if (completed !== undefined) {
     query.eq("completed", completed);

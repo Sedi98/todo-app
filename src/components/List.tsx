@@ -15,7 +15,7 @@ const List = () => {
   }, [completed]);
 
   return (
-    <div className="flex flex-col gap-2 max-h-[calc(100vh-130px)] overflow-y-auto">
+    <div className="flex flex-col gap-2 max-h-[calc(100vh-185px)] overflow-y-auto">
       {list.map((note: ListResponse) => (
         <ListItem
           key={note?.id}
