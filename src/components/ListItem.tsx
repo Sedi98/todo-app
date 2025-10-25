@@ -38,7 +38,7 @@ const ListItem: React.FC<ListItemProps> = ({ text, initialChecked, id }) => {
           onClick={() =>
             dispatch(updateStatus({ noteId: id, completed: !initialChecked }))
           }
-          className={`font-semibold text-lg w-full text-center ${
+          className={`font-semibold text-lg w-full text-center text-black ${
             initialChecked && "line-through "
           }`}
         >
